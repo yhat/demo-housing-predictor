@@ -1,7 +1,7 @@
 library(yhatr)
 library(jsonlite)
 
-df <- read.delim('/Users/coristig/workspace/uploadmodels/demo-housing/manhattan_house.txt', skip=1)
+df <- read.delim('./manhattan_house.txt', skip=1)
 df$ZIP <- as.factor(df$ZIP)
 
 summary(df)
@@ -28,8 +28,8 @@ model.predict <- function(df) {
 }
 
 yhat.config  <- c(
-  username="colin@yhathq.com",
-  apikey="bc2dda6e5a77d6fe879da4ccaa56b37f",
+  username="YHAT_USERNAME",
+  apikey="YHAT_APIKEY",
   env="http://cloud.yhathq.com/"
 )
 
