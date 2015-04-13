@@ -28,7 +28,7 @@ app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
 
 app.engine('html', hbs.express4({
-  partialsDir: path.join(__dirname, 'views', 'partials'),
+  // partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: path.join(__dirname, 'views', 'layout.html')
 }));
 
