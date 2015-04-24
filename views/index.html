@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row text-center">
-        <h2>demo-rentpred</h2>
+        <h2>Demo-NYC-Rent-Predictor</h2>
         <hr>
     </div>
     <div class="row">
@@ -73,6 +73,7 @@
                     <span class=""></span>
                 </div>
             </div>
+            <div id="chart"></div>
             <h5>Raw Data</h5>
             <pre id="results">
 {}
@@ -80,7 +81,6 @@
         </div>
     </div>
 </div>
-
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -105,8 +105,26 @@ $(document).ready(function() {
             contentType: "application/json",
             success: function(data) {
                 $("#results").html(JSON.stringify(data, null, 2));
-                $("#pg-bar").css("width", 100*(data.result.predicted_price[0]/10000) + "%");
-                $("#pg-bar span").text("$" + (data.result.predicted_price[0]).toFixed(0));
+                $("#pg-bar").css("width", 100*(data.result[0].predicted_price/10000) + "%");
+                $("#pg-bar span").text("$" + (data.result[0].predicted_price).toFixed(0));
+                console.log(data.result.predicted_price);
+                var result = data["result"];
+                var x = result["x"];
+                console.log(result[1].x);
+
+            // c3 graph code
+                var chart = c3.generate({
+                    data: {
+                        x: 'x',
+                        json: {
+                                'x': result[1].x,
+                                'y': result[1].y,
+                                // 'predicted': result[0].predicted_price
+                       },
+                       type:'spline'
+                    }
+                });
+
             }
         });
         return false;

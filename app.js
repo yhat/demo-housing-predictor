@@ -15,7 +15,7 @@ var express = require('express'),
 var yh = yhat.init(
     process.env.YHAT_USERNAME,
     process.env.YHAT_APIKEY,
-    "http://cloud.yhathq.com/"
+    "http://sandbox.yhathq.com/"
 );
 
 var examples = [{"Price":4000,"Bedrooms":2,"Baths":1,"Sqft":990,"Neighborhood":"Chelsea"}]
@@ -49,7 +49,7 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
   data = req.body;
-  yh.predict("NycRent", data, function(err, result) {
+  yh.predict("NycRentViz01", data, function(err, result) {
     console.log(data)
     res.send(result);
   });

@@ -1,7 +1,7 @@
 {
     "name": "demo-rentpred",
     "version": "0.0.1",
-    "description": "This is my app. There are many like it, but this one is mine.",
+    "description": "Predict apartment prices in NYC.",
     "private": true,
     "author": {
       "name": "Yhat",
