@@ -22,7 +22,6 @@ var examples = [{"Price":4000,"Bedrooms":2,"Baths":1,"Sqft":990,"Neighborhood":"
 
 var app = express();
 
-
 app.set('port', process.env.PORT || 5000);
 
 app.set('views', __dirname + '/views');
