@@ -15,7 +15,7 @@ var express = require('express'),
 var yh = yhat.init(
     process.env.YHAT_USERNAME,
     process.env.YHAT_APIKEY,
-    "http://sandbox.yhathq.com/"
+    "https://sandbox.yhathq.com/"
 );
 
 var examples = [{"Price":4000,"Bedrooms":2,"Baths":1,"Sqft":990,"Neighborhood":"Chelsea"}]
